@@ -1,89 +1,384 @@
-.container{
-	max-width: 1200px; 
-	margin: 0 auto;
-	background: rgb(175, 222, 176);
-	display: grid;
-	width: 100vw;
-	height: 100vh;
-	grid-template-columns:
-   	1fr       2fr       1fr;
-   	grid-template-areas:
-    "heady     heady     heady"
-    "navvy     navvy     navvy"
-    "aside1    mainy     aside2"
-    "aside1    mainy     aside2"
-    "aside1    mainy     aside2"
-    "footy     footy     footy";
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-header {
-	grid-area: heady; 
-	background:rgb(254, 218, 175);
-}
-nav {
-	grid-area: navvy; 
-	background:rgb(232, 206, 236);
-}
-main {grid-area: mainy; 
-	background: rgb(240, 234, 182); 
-	max-height: 100%;
-}
-#aside1 {grid-area: aside1; 
-	background: rgb(241, 202, 174);
-}
-#aside2 {grid-area: aside2; 
-	background: rgb(191, 226, 246);
-}
-footer {
-	grid-area: footy; 
-	background: rgb(171, 171, 171);
+body, html{
+  height: 100%;
+  width: 100%;
 }
 
-nav ul {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-around;
+nav{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: 40px 0;
+  z-index: 200;
 }
 
-nav ul li {
-	list-style: none
+@include nav-bar;
+
+.sr-only{
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  /* 1 */
 }
 
-@media screen and (min-width: 641px) and (max-width: 900px) {
-	.container {
-		grid-template-columns:
-		   1fr 1fr;
-		grid-template-areas:
-		  "heady heady"
-		  "navvy navvy"
-		  "mainy mainy"
-		  "aside1 aside2"
-		  "footy footy";
-	}
+.grid-gallery{
+  max-width: $default-width;
+  margin: $center-margin;
+  margin-bottom: 100px;
+  display: grid;
+  /*width: 100vw;
+  height: 100vh;*/
+  grid-template-columns: 
+  1fr 1fr 1fr;
+  grid-template-areas: 
+  "image1 image2 image3"
+  "image4 image5 image6";
 }
 
-@media screen and (max-width: 640px) {
-	.container {
-		grid-template-columns:
-		   1fr;
-		grid-template-areas:
-		  "heady"
-		  "mainy"
-		  "aside1"
-		  "aside2"
-		  "navvy"
-		  "footy";
-	}
-	nav ul {
-		flex-flow: column nowrap;
-		text-align: center;
-	}
-	nav ul li a {
-		display: block;
-		padding: 10px 5px;
-		margin: 5px;
-		border: 1px black solid;
-		background: white;
+.image1{
+  grid-area: image1;
+}
 
-	}
+.image2{
+  grid-area: image2;
+}
+
+.image3{
+  grid-area: image3;
+}
+
+.image4{
+  grid-area: image4;
+}
+
+.image5{
+  grid-area: image5;
+}
+
+.image6{
+  grid-area: image6;
+}
+
+.pad{
+   padding-top: 60px;
+}
+
+#about-grid{
+  max-width: 1200px;
+  margin: $center-margin;
+  display: grid;
+  grid-template-columns: 
+  1fr 1fr;
+  grid-template-areas: 
+  "about-me image-me";
+}
+
+#about-me{
+  grid-area: about-me;
+  margin-left: 30px;
+  margin-right: 20px;
+
+}
+
+#image-me{
+  grid-area: image-me;
+  margin: 0 auto;
+}
+
+.parallax{
+  perspective: 1px; /*like being the size of 1px --> will get the most dramatic affect using 1px and as you go up it's less dramatic */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 925px;
+}
+
+.parallax-layer{
+  position: absolute; /*keeps it in place*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 100vh 0; /*add some padding to force scrollbars*/
+}
+
+.foreground{
+  transform: translateZ(0);
+  /*transform: translateZ(-1px) scale(2.0); taking out these comments make the fore & background the same size*/
+}
+
+.background{
+  transform:  translateZ(-1px); /*pushing it back into space*/
+  /*transform: translateZ(-2px) scale(3.0); pushing it back into space and scaling it up*/
+}
+
+.parallax2{
+  height: 100%; 
+  width: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax3{
+  perspective: 2px; /*like being the size of 1px --> will get the most dramatic affect using 1px and as you go up it's less dramatic */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 580.5px;
+  margin-top: 80px;
+}
+
+.parallax-layer3{
+  position: absolute; /*keeps it in place*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 100vh 0; /*add some padding to force scrollbars*/
+}
+
+.foreground3{
+  transform: translateZ(0);
+  /*transform: translateZ(-1px) scale(2.0); taking out these comments make the fore & background the same size*/
+}
+
+.midground3{
+  transform: translate3d(-600px, 0px, -1.5px) scale(0.9);
+}
+
+.background3{
+  transform:  translate3d(550px, 0px, -3.25px) scale(1.5); /*pushing it back into space*/
+  /*transform: translateZ(-2px) scale(3.0); pushing it back into space and scaling it up*/
+}
+
+.name-bg{
+  font-size: 200px;
+  text-align: center;
+}
+
+.name-fixed{
+  position: absolute;
+  width: 100%;
+  margin-top: 105px;
+}
+
+#contact{
+  padding: 25px;
+  margin: 30px 0;
+}
+
+form h3{
+  text-align: center;
+}
+
+fieldset {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+}
+ 
+#contact input[type="text"], #contact input[type="email"], #contact textarea {
+    width: 100%;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+ 
+#contact textarea {
+    height:100px;
+    max-width:100%;
+}
+ 
+#contact button[type="submit"] {
+    width: 102.7%;
+    margin: $center-margin;
+    padding:10px;
+}
+
+#icon-grid{
+  max-width: 600px;
+  margin: $center-margin;
+  display: grid;
+  grid-template-columns: 
+  1fr 1fr 1fr;
+  grid-template-areas: 
+  "email-link insta linkedin";
+}
+
+#email-link{
+  grid-area: email-link;
+}
+
+#insta{
+  grid-area: insta;
+}
+
+#linkedin{
+  grid-area: linkedin;
+}
+
+h2{
+  margin-top: 65px;
+  margin-bottom: 30px;
+}
+
+figure{
+  padding: 20px;
+}
+
+#to-top{
+  margin-top: 20px;
+}
+
+#to-top a:hover{
+  padding: 10px;
+}
+
+footer{
+  padding-bottom: 10px;
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 1220px){
+  .grid-gallery{
+    grid-template-columns: 
+    1fr 1fr;
+    grid-template-areas: 
+    "image1 image2" 
+    "image3 image4"
+    "image5 image6";
+  }
+}
+
+@media screen and (max-width: 930px){
+  .name-fixed{
+    font-size: 178px;
+  }
+}
+
+@media screen and (max-width: 815px){
+  .grid-gallery{
+    grid-template-columns: 
+    1fr;
+    grid-template-areas: 
+    "image1" 
+    "image2" 
+    "image3" 
+    "image4"
+    "image5" 
+    "image6";
+  }
+
+  #about-grid{
+    grid-template-columns: 
+    1fr;
+    grid-template-areas: 
+    "image-me"
+    "about-me";
+  }
+
+  #image-me{
+    grid-area: image-me;
+    margin: $center-margin;
+    padding: 15px;
+  }
+
+  #about-me{
+    grid-area: about-me;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+
+  .name-fixed{
+    font-size: 150px;
+  }
+}
+
+@media screen and (max-width: 705px){
+  .name-fixed{
+    font-size: 125px;
+  }
+}
+
+@media screen and (max-width: 590px){
+  .name-fixed{
+    font-size: 100px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .name-fixed{
+    font-size: 100px;
+  }
+}
+
+@media screen and (max-width: 470px){
+  .name-fixed{
+    font-size: px;
+  }
+
+  #email-link img{
+    width: 54px;
+    height: 54px;
+  }
+
+  #insta img{
+    width: 44px;
+    height: 44px;
+  }
+
+  #linkedin img{
+    width: 44px;
+    height: 44px;
+  }  
+}
+
+@media screen and (max-width: 420px){
+  body, html{
+    margin-right: none;
+    padding-right: none;
+    width: 100vw;
+  }
+
+  .parallax2{
+    background-size: contain;
+    height: 500px;
+  }
+
+  .parallax{
+    margin-right: none;
+    padding-right: none;
+    width: 100vw;
+    display: none;
+  }
+
+  .parallax-layer{
+    display: none;
+  }
+
+  .foreground{
+    display: none;
+  }
+
+  .background{
+    display: none;
+  }
+
+  .grid-gallery{
+    max-width: 100%;
+    width: 100vw;
+  }
 }

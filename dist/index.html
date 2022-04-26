@@ -1,77 +1,223 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Custom Boilerplate</title>
-  <meta name="description" content="">
+<!DOCTYPE html>
+<html lang="en">  
+<head> 
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <title>Summer Edwards</title><meta name="description" content="Summer's personal modeling portfolio.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+  <meta property="og:title" content="Summer Edwards">
+  <meta property="og:description" content="Summer's personal modeling portfolio.">
+  <meta property="og:url" content="https://creative.colorado.edu/~sued1493/dist/index.html">
+  <meta property="og:image" content="https://creative.colorado.edu/~sued1493/dist/tile-wide.png">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
 
-  <!-- <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css"> -->
-
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF9ESEMT0W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZF9ESEMT0W');
+  </script>
 </head>
 
 <body>
-<!-- Add your site or application content here -->
-<div class="container">
   <header>
-    <h1>TITLE</h1>
+    <h1 class="sr-only" id="target">SUMMER</h1>
   </header>
 
   <nav>
+    <h2 class="sr-only">Main Navigation</h2>
     <ul>
-      <li><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li><a href="#">Link 3</a></li>
-      <li><a href="#">Link 4</a></li>
+      <li><a href="#Section1">HOME</a></li>
+      <li><a href="#Section2">PROJECTS</a></li>
+      <li><a href="#Section3">ABOUT</a></li>
+      <li><a href="#Section4">CONTACT</a></li>
     </ul>
   </nav>
 
-  <main>
-    <section>
-      <h2>Section Header 1</h2>
-      <p>paragraph</p>
+  <h2 class="name-fixed" id="Section1">SUMMER</h2>
 
-      <h2>Section Header 2</h2>
-      <p>paragraph</p>
+  <div class="parallax">
+    <section class="parallax-layer foreground">
+      <h2 class="sr-only">IMAGE</h2>
 
-      <h2>Section Header 3</h2>
-      <p>paragraph</p>
-
-      <h2>Section Header 4</h2>
-      <p>paragraph</p>
+      <figure>
+        <img src="img/zion-fav2.png" alt="Summer Edwards" width="400" height="500"> <!-- dont need to say "image of" bc screen reader already does that-->
+      </figure>
     </section>
-  </main>
 
-  <aside id="aside1">
-    <h2>Aside 1</h2>
-    <p>paragraph</p>
-  </aside>
+    <section class="parallax-layer background">
+      <h2 class="name-bg">EDWARDS</h2>
+    </section>
 
-  <aside id="aside2">
-    <h2>Aside 2</h2>
-    <p>paragraph</p>
-  </aside>
+  </div> <!-- end parallax -->
 
-  <footer>
-    <small>&copy; Summer Edwards 2022</small>
-  </footer>
-</div> <!-- end container -->
+<!--<nav>
+    <h2 class="sr-only">Main Navigation</h2>
+    <ul>
+      <li><a href="#Section1">HOME</a></li>
+      <li><a href="#Section2">PROJECTS</a></li>
+      <li><a href="#Section3">ABOUT</a></li>
+      <li><a href="#Section4">CONTACT</a></li>
+    </ul>
+  </nav>-->
 
-  <script src="js/vendor/modernizr-3.11.8.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="main.js"></script> 
+  <section>
+    <h2 id="Section2">PROJECTS</h2>
+
+    <div class="grid-gallery">
+
+    <div class="image1">
+    <figure>
+      <img src="img/alexis.jpg" alt="Summer and Matt in front of building" width="300" height="200">
+    </figure>
+    </div>
+
+    <div class="image2">
+    <figure>
+      <img src="img/nyc.jpg" alt="Summer under the Empire State Building" width="300" height="200">
+    </figure>
+    </div>
+
+    <div class="image3">
+    <figure>
+      <img src="img/union.jpg" alt="Summer at Union Station in Denver, CO" width="300" height="200">
+    </figure>
+    </div>
+
+    <div class="image4">
+    <figure>
+      <img src="img/arch.jpg" alt="Summer underneath Delicate Arch" width="300" height="200">
+    </figure>
+    </div>
+
+    <div class="image5">
+    <figure>
+      <img src="img/taos.jpg" alt="Summer and Matt in Taos, New Mexico" width="300" height="200">
+    </figure>
+    </div>
+
+    <div class="image6">
+    <figure>
+      <img src="img/nyc2.jpg" alt="Summer on top of Top of the Rock, NYC" width="300" height="200">
+    </figure>
+    </div>
+
+    <br>
+  </div> <!-- end grid-gallery -->
+  </section>
+
+  <div class="parallax2">
+  </div>
+
+  <section class="pad">
+    <h2 id="Section3">ABOUT</h2>
+
+    <div id="about-grid">
+      <div id="about-me">
+      <p>
+        I have always had a passion for art since I was young; dabbling in fine arts, textile arts, and photography. At the beginning of 2021, modeling has become one of many art forms I have participated in — and I have fallen in love with it. 
+        <br><br>
+        Currently, I am an independent travel model and I am not affiliated with any agency at this time. My disciplines include print, runway, and self portraiture during my free time. Being a creative director when planning my own shoots allows me to express my creative abilites in the best ways; from developing concepts, to styling, set design, posing, the list goes on. 
+        <br><br>
+        While modeling individually, I have further found a lot of success modeling with my boyfriend, Matthew Senger — who is also a model. Together, we are able to meet the high demand for model couples throughout the United States. After a year of working together, we have built a network of over 50 artists in varying disciplines. 
+        <br><br> 
+        I love meeting new people and building connections with others. Please direct any inquiries through my contact form and we can start discussing if we are a good fit! 
+        <br><br>
+        Talk soon xx,
+        <br>
+        Summer 
+      </p>
+      </div> <!-- end about-me -->
+
+      <div id="image-me">
+      <img src="img/about-image.jpg" alt="Summer Edwards smiling" width="450" height="450">
+      </div> <!-- end image-me -->
+
+    </div> <!-- end about-grid -->
+  </section>
+
+  <div class="parallax3">
+    <section class="parallax-layer3 foreground3">
+      <h2>message me!</h2>
+    </section>
+
+    <section class="parallax-layer3 midground3">
+      <h2 class="sr-only">IMAGE</h2>
+
+      <figure>
+        <img src="img/typing-reversed.png" alt="typing icon"> <!-- dont need to say "image of" bc screen reader already does that-->
+      </figure>
+    </section>
+
+    <section class="parallax-layer3 background3">
+      <h2 class="sr-only">IMAGE</h2>
+
+      <figure>
+        <img src="img/typing.png" alt="typing icon"> <!-- dont need to say "image of" bc screen reader already does that-->
+      </figure>
+    </section>
+  </div> <!-- end parallax3 -->
+
+  <section>
+    <h2 id="Section4">CONTACT</h2>
+
+    <!-- form sends email through Get Form - https://blog.getform.io/how-to-create-an-html-form-that-sends-you-an-email/ -->
+    <form id="contact" action="https://getform.io/f/15e3dd40-7d1c-4a9c-a1c4-caeae19d32c9" method="post">
+      <h3>Let's get to know each other!</h3>
+ 
+      <fieldset>
+        <input placeholder="Name" name="name" type="text" required="required">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Email" name="email" type="email" required="required">
+      </fieldset>
+      <fieldset>
+        <textarea name="message" placeholder="Message" type ="text" required="required"></textarea>
+      </fieldset>
+      <fieldset>
+        <button type="submit" name="submit" id="contact-submit">Submit</button>
+      </fieldset>
+    </form>
+
+    <div id="icon-grid">
+    <div id="email-link">
+    <figure>
+      <a href="mailto:edwardssu1@gmail.com"><img src="img/mail-icon.png" alt="email icon" width="74" height="74"></a>
+    </figure>
+    </div>
+
+    <div id="insta">
+    <figure>
+      <a href="https://www.instagram.com/summ.sum/" target="_blank"><img src="img/insta-icon.png" alt="Instagram icon" width="64" height="64"></a>
+    </figure>
+    </div>
+
+    <div id="linkedin">
+    <figure>
+      <a href="https://linkedin.com/in/summer-edwards-425501129" target="_blank"><img src="img/linkedin-icon.png" alt="LinkedIn icon" width="64" height="64"></a>
+    </figure>
+    </div>
+    </div> <!-- end icon-grid --> 
+  </section>
+
+  <div id="to-top">
+  <a href="index.html">Back to Top</a>
+  </div>
 </body>
+  
+<footer>
+  <small> &copy; 2022 Summer Edwards </small>
+</footer>
+
+<script src="main.js"></script>
 </html>
